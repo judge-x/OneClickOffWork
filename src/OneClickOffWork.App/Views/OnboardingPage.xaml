@@ -1,0 +1,25 @@
+<UserControl x:Class="OneClickOffWork.Views.OnboardingPage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Border Style="{StaticResource Card}">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <StackPanel>
+                <TextBlock Text="欢迎使用一键下班" FontSize="32" FontWeight="Bold"/>
+                <TextBlock Text="轻量确认，安心息屏。" Foreground="{DynamicResource SubtleTextBrush}" Margin="0,10,0,0" FontSize="16"/>
+            </StackPanel>
+            <UniformGrid Grid.Row="1" Columns="2" Margin="0,30">
+                <TextBlock Text="1. 点击一键下班会先显示注意事项。" TextWrapping="Wrap" Margin="0,0,24,18"/>
+                <TextBlock Text="2. 确认后只让显示器进入低功耗状态。" TextWrapping="Wrap" Margin="0,0,24,18"/>
+                <TextBlock Text="3. 它不会关机、注销或让电脑睡眠。" TextWrapping="Wrap" Margin="0,0,24,18"/>
+                <TextBlock Text="4. 注意事项可在后台页面自由管理。" TextWrapping="Wrap" Margin="0,0,24,18"/>
+                <TextBlock Text="5. 关闭窗口后仍可从右下角托盘找到。" TextWrapping="Wrap" Margin="0,0,24,18"/>
+            </UniformGrid>
+            <Button Grid.Row="2" Content="开始使用" Command="{Binding FinishCommand}" Width="150" HorizontalAlignment="Right"/>
+        </Grid>
+    </Border>
+</UserControl>
