@@ -2,33 +2,6 @@
 
 轻量级 Windows 后台工具。点击“一键下班”后，应用会显示下班前注意事项确认窗口；用户确认或倒计时结束后，仅调用 Windows 显示器息屏 API，不关机、不注销、不睡眠。
 
-## 技术栈
-
-- C# / .NET 8
-- WPF
-- MVVM 轻量实现
-- 本地 JSON 存储
-- Windows Forms NotifyIcon 系统托盘
-- Win32 `SendMessage(WM_SYSCOMMAND + SC_MONITORPOWER)` 息屏
-
-## 项目结构
-
-```text
-OneClickOffWork/
-  OneClickOffWork.sln
-  src/
-    OneClickOffWork.App/
-      App.xaml
-      MainWindow.xaml
-      Views/
-      ViewModels/
-      Models/
-      Services/
-      Commands/
-      Utils/
-      Assets/
-      Styles/
-```
 
 ## 本地运行
 
@@ -118,27 +91,3 @@ SendMessage(HWND_BROADCAST, WM_SYSCOMMAND, SC_MONITORPOWER, 2)
 
 该调用仅请求显示器进入低功耗/关闭状态，不执行系统关机、注销或睡眠。
 
-## 打包建议
-
-普通安装包可以使用：
-
-- Inno Setup
-- WiX Toolset
-- MSIX Packaging Tool
-
-如果后续需要 MSIX，建议补充：
-
-- 正式应用图标
-- `Package.appxmanifest`
-- 代码签名证书
-- 开机自启改用 MSIX startup task
-
-## 后续扩展
-
-- 增加真正的 Acrylic/Mica 背景效果
-- 增加 Windows App SDK 通知，替代轻量 app toast
-- 增加提醒拖拽排序
-- 增加多套下班清单模板
-- 增加企业策略：禁用自动倒计时、统一默认提醒
-- 增加日志查看页面
-- 增加自动更新能力
